@@ -45,7 +45,7 @@
             
             .column {
               float: left;
-              width: 25%;
+              width: 20%;
               margin-bottom: 16px;
               padding: 0 8px;
             }
@@ -59,10 +59,17 @@
             
             .card {
               box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              /* color: rgb(248, 242, 196); */
+              background-color: rgb(248, 242, 196);
+              /* margin: 1%; */
+              padding: 5%;
+              border-radius: 1em;
             }
             
             .container {
-              padding: 0 16px;
+              padding: 5%;
+              justify-content: center;
+              text-align: center;
             }
             
             .container::after, .row::after {
@@ -72,7 +79,7 @@
             }
             
             .title {
-              color: grey;
+              font-weight: bold;
             }
             
             .button {
@@ -85,12 +92,22 @@
               text-align: center;
               cursor: pointer;
               width: 100%;
+              border-radius: 1em;
             }
             
             .button:hover {
               background-color: #555;
             }
+
+            .pfp {
+                border-radius: 50%;
+                width: 90%;
+                height: 90%;
+                object-fit: cover;
+                align-content: center;
+            }
             </style>
+
     </head>
     <body>
         <div class="topnav">
@@ -104,8 +121,8 @@
         <div class="row">
             <div class="column">
               <div class="card">
-                <img src="huynh.jpg" alt="Huỳnh" style="width:100%">
                 <div class="container">
+                  <img src="huynh.jpg" alt="Huỳnh" class="pfp">
                   <h2>Lê Thị Như Huỳnh</h2>
                   <p class="title">Trưởng nhóm</p>
                   <p>Ưu điểm: Thích code</p>
@@ -116,8 +133,8 @@
             </div>
             <div class="column">
                 <div class="card">
-                  <img src="ttu.jpg" alt="Tú" style="width:100%">
                   <div class="container">
+                    <img src="ttu.jpg" alt="Tú" class="pfp">
                     <h2>Võ Thanh Tú</h2>
                     <p class="title">Phó nhóm</p>
                     <p>Hay bị sai vặt</p>
@@ -128,8 +145,8 @@
               </div>
               <div class="column">
                 <div class="card">
-                  <img src="anh.jpg" alt="Anh" style="width:100%">
                   <div class="container">
+                    <img src="anh.jpg" alt="Anh" class="pfp">
                     <h2>Huỳnh Anh</h2>
                     <p class="title">Thành viên</p>
                     <p>Ham học được cái chậm tiêu</p>
@@ -140,13 +157,25 @@
               </div>
               <div class="column">
                 <div class="card">
-                  <img src="huy.jpg" alt="Huy" style="width:100%">
                   <div class="container">
+                    <img src="huy.jpg" alt="Huy" class="pfp">
                     <h2>Huỳnh Minh Huy</h2>
                     <p class="title">Thành viên</p>
                     <p>Ưu điểm: đẹp trai, thích lắng nghe, ga lăng, đỉnh cao</p>
                     <p>Nhược điểm: ưu điểm</p>
                     <a href="https://www.facebook.com/profile.php?id=100026500669787&mibextid=ZbWKwL"><button class="button">Liên hệ</button></a>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="card">
+                  <div class="container">
+                    <img src="khang.jpg" alt="Khang" class="pfp">
+                    <h2>Tô Hoàng Khang</h2>
+                    <p class="title">Thành viên</p>
+                    <p>Biến mất trong vòng ba tháng</p>
+                    <p>Đang tái hòa nhập xã hội</p>
+                    <a href="https://www.facebook.com/khanglaconnguoi"><button class="button">Liên hệ</button></a>
                   </div>
                 </div>
               </div>
