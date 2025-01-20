@@ -4,10 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            body {
-              margin: 0;
-              font-family: Arial, Helvetica, sans-serif;
-              min-height: 100vh;
+            .paper {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                background: linear-gradient(135deg, #71b7e6, #9b59b6);
             } 
             
             .topnav {
@@ -33,38 +36,145 @@
               background-color: #04AA6D;
               color: white;
             }
-            *{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
             }
-            .container{
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                width: 300px;
-                padding: 15px;
-                border: 1px solid skyblue;
-                border-radius: 5px;
-            }
-            input{
-                margin: 5px 0px;
-                height: 35px;
-                padding: 7px;
-            }
-            button{
-                height: 35px;
-                margin: 5px 0px;
-                background-color: skyblue;
-                border: none;
-                border-radius: 5px;
-                color: #333;
-            }
-            button:hover{
-                background-color:#333;
-                color: skyblue;
-            }
-            </style>
+            .container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+}
+form .gender-details .gender-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+form input[type="radio"] {
+  display: none;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0
+}
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+form .button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+/* Responsive media query code for mobile devices */
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+/* Responsive media query code for mobile devices */
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
+        </style>
     </head>
     <body>
         <div class="topnav">
@@ -72,26 +182,78 @@
             <a href="miniwiki.html">Mini Wiki</a>
             <a href="donation.html">Donation</a>
             <a href="aboutus.html">About us</a>
-            <a href="ltvdcd4.html">Exercise</a>
+            <a href="assignments.html">Assignments</a>
         </div>
-        <br>
+        <div class="paper">
         <div class="container">
-            <legend>Thủ tục quyên góp từ thiện</legend>
-            <laber for="name" style="text-align: left;">Họ và tên</laber>
-            <input type="text" id="name" name="name" placeholder="Trần Châu Nguyên" required>
-            <label for="email" style="text-align: left;">Email:</label>
-            <input type="text" id="email" name="email" placeholder="sigmaboy69@gmail.com" required>
-            <label for="phone" style="text-align: left;">Phone number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Để chúng tôi liên lạc với bạn" required>
-            <label for="payment" style="text-align: left;">Phương thức quyên góp:</label>
-            <select id="payment" name="payment">
-                <option value="visa">Visa</option>
-                <option value="vidientu">Momo</option>
-                <option value="chuyenkhoan">Banking</option>
-            </select>
-            <label for="xacnhan" style="text-align: left;">Bạn có chắc chắn với lựa chọn này không?</label>
-            <input type="checkbox" id="xacnhan" name="xacnhan">
-            <button>Xác nhận</button>
+            <!-- Title section -->
+            <div class="title">Đăng kí thành viên Premium</div>
+            <div class="content">
+              <!-- Registration form -->
+              <form action="#">
+                <div class="user-details">
+                  <!-- Input for Full Name -->
+                  <div class="input-box">
+                    <span class="details">Họ và tên</span>
+                    <input type="text" placeholder="Trần Châu Nguyên" required>
+                  </div>
+                  <!-- Input for Username -->
+                  <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="sigmaboy69@gmail.com" required>
+                  </div>
+                  <!-- Input for Email -->
+                  <div class="input-box">
+                    <span class="details">Số điện thoại</span>
+                    <input type="text" placeholder="Nhập số điện thoại vào..." required>
+                  </div>
+                  <!-- Input for Phone Number -->
+                  <div class="input-box">
+                    <span class="details">Địa chỉ nhà</span>
+                    <input type="text" placeholder="86C Phường Phú Tân, Ohio" required>
+                  </div>
+                  <!-- Input for Password -->
+                  <div class="input-box">
+                    <span class="details">Mật khẩu</span>
+                    <input type="text" placeholder="Nhập mật khẩu vào" required>
+                  </div>
+                  <!-- Input for Confirm Password -->
+                  <div class="input-box">
+                    <span class="details">Xác nhận mật khẩu</span>
+                    <input type="text" placeholder="Nhập lại mật khẩu cái nữa ;-;" required>
+                  </div>
+                </div>
+                <div class="gender-details">
+                  <!-- Radio buttons for gender selection -->
+                  <input type="radio" name="gender" id="dot-1">
+                  <input type="radio" name="gender" id="dot-2">
+                  <input type="radio" name="gender" id="dot-3">
+                  <span class="gender-title">Giới tính</span>
+                  <div class="category">
+                    <!-- Label for Male -->
+                    <label for="dot-1">
+                      <span class="dot one"></span>
+                      <span class="gender">Nam</span>
+                    </label>
+                    <!-- Label for Female -->
+                    <label for="dot-2">
+                      <span class="dot two"></span>
+                      <span class="gender">Nữ</span>
+                    </label>
+                    <!-- Label for Prefer not to say -->
+                    <label for="dot-3">
+                      <span class="dot three"></span>
+                      <span class="gender">LGBT</span>
+                    </label>
+                  </div>
+                </div>
+                <!-- Submit button -->
+                <div class="button">
+                  <input type="submit" value="Register">
+                </div>
+              </form>
+            </div>
+        </div>
         </div>
     </body>
 </html>
