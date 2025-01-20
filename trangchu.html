@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Protection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            background: linear-gradient(to bottom, #F4F9F4, #E8F5E9);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        header::after {
+            content: "";
+            background: url('https://source.unsplash.com/1600x300/?wildlife,nature') no-repeat center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        header:hover {
+            background: linear-gradient(135deg, #388E3C, #66BB6A);
+            transition: background 0.5s ease;
+        }
+
+        /* Container */
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Intro Section */
+        .intro-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .intro {
+            font-size: 1.2em;
+            line-height: 1.8;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            flex: 1 1 55%;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        .intro img {
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            flex: 1 1 35%;
+            transition: transform 0.3s, filter 0.3s;
+            position: relative;
+            transform: scale(0.9);
+            opacity: 0;
+            animation: zoomIn 1s forwards;
+            animation-delay: 1s;
+        }
+
+        .intro img:hover {
+            transform: scale(1.05);
+            filter: brightness(110%);
+        }
+
+        /* Topics Section */
+        .topics {
+            font-size: 1.2em;
+            line-height: 1.8;
+            padding: 30px;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #E8F5E9, #ffffff);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 1s forwards;
+            animation-delay: 1.5s;
+        }
+
+        .topics h2 {
+            text-align: center;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .topics p {
+            margin: 15px 0;
+            text-align: justify;
+        }
+
+        .topics strong {
+            color: #2E7D32;
+        }
+
+        .topics i {
+            color: #388E3C;
+        }
+
+        .topics p::before {
+            content: "🌱";
+            margin-right: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        /* Call to Action Button */
+        .cta {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 40px;
+            background-color: #388E3C;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta:hover {
+            background-color: #2E7D32;
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2E7D32;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+            position: relative;
+        }
+
+        footer i {
+            margin-right: 10px;
+            color: #81C784;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h4>Chung tay bảo vệ động vật hoang dã vì một ngày mai tốt đẹp hơn (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</h4>
+</header>
+
+<div class="container">
+    <h1 style="text-align: center; color: #2E7D32;">Chào mừng đến với G4PA</h1>
+    <div class="intro-container">
+        <p class="intro">G4PA hay "Group 4 Protects Animals" là một nhóm hoạt động với mục tiêu tuyên truyền nâng cao ý thức bảo vệ động vật của con người. Chúng tôi cung cấp thông tin chi tiết về các loài động vật đang gặp nguy hiểm, các mối đe dọa đối với chúng như săn bắn trái phép, mất môi trường sống và biến đổi khí hậu. Ngoài ra, trang web khuyến khích người dùng tham gia vào các hoạt động bảo vệ động vật như quyên góp, tình nguyện và tuyên truyền. Chúng tôi mong muốn xây dựng một cộng đồng mạnh mẽ, hỗ trợ nhau trong việc bảo vệ động vật và bảo vệ thiên nhiên. Cam kết của chúng tôi là giúp duy trì sự sống cho các loài động vật và bảo vệ môi trường sống của chúng, đồng thời cung cấp tài nguyên hữu ích cho các tổ chức bảo tồn.</p>
+        <img src="logo.png" alt="Animal Protection">
+    </div>
+
+    <div class="topics">
+        <h2>Một số nội dung bạn có thể tìm được tại G4PA</h2>
+        <p><strong>Miniwiki:</strong> Chúng tôi cung cấp tất tần tật thông tin về các loài động vật. Bạn sẽ được chiêm ngưỡng chúng một cách trọn vẹn về cả hình ảnh lẫn các video sống động. <b>Nếu bạn chưa tìm được loài động vật mà bản thân muốn tìm hiểu?</b> Liên hệ cho chúng tôi tại About Us nhé! G4PA chân thành xin lỗi vì trải nghiệm chưa thật sự đầy đủ này, chúng tôi đã và đang hoàn thiện từng ngày một, hy vọng nhận được sự ủng hộ của bạn!</p>
+        <p><strong>Donation:</strong> Tại đây chúng tôi nói không với khai gian, mọi khoản ủng hộ được các bạn gửi về sẽ được cập nhật sao kê liên tục. Nếu thấy hứng thú với loài động vật nào, bạn có thể gửi ủng hộ cho chúng, chúng tôi sẽ giúp bạn gửi khoản đó về các vườn quốc gia hiện chăm sóc loài đó. <i>Bật mí nhỏ: donate có thể giúp loài         động vật bạn đang mong chờ xuất hiện trên trang web của G4PA nhanh hơn đấy!</i></p>
+        <p><strong>About Us:</strong> Trong quá trình thực hiện sẽ không thể tránh khỏi sai sót, nếu có bất kì đóng góp ý kiến nào, hãy liên hệ với chúng tôi tại đây. Rất cảm ơn sự ủng hộ của bạn dành cho G4PA.</p>
+        <p><strong>Exercise:</strong> Các bài luyện tập, vận dụng được tổng hợp tại đây.</p>
+    </div>
+</div>
+
+<footer>
+    <i class="fas fa-leaf"></i>&copy; 2025 Bao Ve Dong Vat | G4PAwU
+</footer>
+
+</body>
+</html>
+
