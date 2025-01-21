@@ -97,8 +97,9 @@
 			background-color: #000;
 			text-align: center;
 			cursor: pointer;
-			width: 20%;
+			width: 30%;
 			border-radius: 1em;
+			font-weight: bold;
 		}
 
 		.button:hover {
@@ -111,6 +112,10 @@
 			height: 25%;
 			object-fit: cover;
 			align-content: center;
+		}
+
+		#moreText {
+			display: none;
 		}
 	</style>
 
@@ -131,11 +136,70 @@
 			<p><strong>Lớp 12 Toán 2 - Trường THPT Chuyên Bến Tre</strong></p>
 			<p><i>"Ham học được cái chậm tiêu"</i></p>
 			<p>Mình là Huỳnh Anh, một người yêu thích việc học và luôn nỗ lực hết mình dù không phải lúc nào cũng tiếp thu nhanh. Mình tin rằng sự cố gắng và kiên trì sẽ giúp mình đạt được kết quả tốt hơn qua từng ngày. Ngoài việc học, mình còn đam mê thiết kế đồ họa – nơi mình có thể thỏa sức sáng tạo và biến những ý tưởng thành hình ảnh. Với mình, mỗi ngày là một cơ hội để học hỏi và phát triển, cả trong học tập lẫn những sở thích cá nhân.</p>
-			<a href="https://www.facebook.com/profile.php?id=100083819239440&mibextid=ZbWKwL"><button class="button">Liên hệ</button></a>
+			<button onclick="toggleText()" id="textButton" class="button">
+				Thông tin liên hệ
+		  	</button>
+				<span id="points">
+				</span>
+				<span id="moreText">
+					<p><b>Facebook:</b> Anh Huynh (<a href="https://www.facebook.com/profile.php?id=100083819239440&mibextid=ZbWKwL">anh.huynh.84550</a>)</p>
+				</span>
 		</div>
 		<div class="container" align="right" width="20%">
 			<!-- <h1 class="title">About Me</h1> -->
 			<img src="anh.jpg" alt="Khang's profile picture" class="pfp" align="right">
+
 		</div>
 	</div>
+
+
+
+	<script>
+		function toggleText() {
+
+			// Get all the elements from the page
+			let points =
+				document.getElementById("points");
+
+			let showMoreText =
+				document.getElementById("moreText");
+
+			let buttonText =
+				document.getElementById("textButton");
+
+			// If the display property of the dots 
+			// to be displayed is already set to 
+			// 'none' (that is hidden) then this 
+			// section of code triggers
+			if (points.style.display === "none") {
+
+				// Hide the text between the span
+				// elements
+				showMoreText.style.display = "none";
+
+				// Show the dots after the text
+				points.style.display = "inline";
+
+				// Change the text on button to 
+				// 'Show More'
+				buttonText.innerHTML = "Thông tin liên hệ";
+			}
+
+			// If the hidden portion is revealed,
+			// we will change it back to be hidden
+			else {
+
+				// Show the text between the
+				// span elements
+				showMoreText.style.display = "inline";
+
+				// Hide the dots after the text
+				points.style.display = "none";
+
+				// Change the text on button
+				// to 'Show Less'
+				buttonText.innerHTML = "Ẩn thông tin liên hệ";
+			}
+		}
+	</script>
 </body>
